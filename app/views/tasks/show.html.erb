@@ -1,0 +1,18 @@
+<div class="task-title"><h2><%= @task.title %></h2>
+<%= link_to delete_task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete '#{@task.title}'?" } do %>
+            <i class="fas fa-trash-alt"></i>
+            <% end %>&ensp;
+            <div class="btn btn-edit">
+              <%= link_to edit_task_path do %>
+              <i class="fas fa-edit"> Edit this task</i>
+              <% end %>
+            </div>
+          </div>
+<p><%= @task.details %></p>
+<p><%= @task.completed %></p>
+<hr>
+  <%= link_to tasks_path do %>
+  <i class="fas fa-undo">&ensp;Back to list</i>
+  <% end %>
